@@ -83,7 +83,7 @@ inputs:
     required: false
     description:
       'How many times to retry OpenAI API in case of timeouts or errors?'
-    default: '5'
+    default: '3'
   openai_timeout_ms:
     required: false
     description: 'Timeout for OpenAI API call in millis'
@@ -91,7 +91,7 @@ inputs:
   openai_concurrency_limit:
     required: false
     description: 'How many concurrent API calls to make to OpenAI servers?'
-    default: '4'
+    default: '2'
   system_message:
     required: false
     description: 'System message to be sent to OpenAI'
