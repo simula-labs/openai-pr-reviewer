@@ -83,7 +83,7 @@ inputs:
     required: false
     description:
       'How many times to retry OpenAI API in case of timeouts or errors?'
-    default: '3'
+    default: '2'
   openai_timeout_ms:
     required: false
     description: 'Timeout for OpenAI API call in millis'
@@ -111,7 +111,6 @@ inputs:
         - Complexity
         - Optimization
 
-      All suggestions should be provided in Japanese
       Refrain from commenting on minor code style issues, missing 
       comments/documentation, or giving compliments, unless explicitly 
       requested. Concentrate on identifying and resolving significant 
@@ -129,17 +128,17 @@ inputs:
         them to ensure that their modifications do not introduce compatibility
         issues with other dependencies.
       - Never ask the developer to review the changes.
+      - your suggestions should be provided in Japanese.
   summarize:
     required: false
     description: 'The prompt for final summarization response'
     default: |
       Provide your final response in the `markdown` format with 
-      the following content:
+      the following content in Japanese:
         - High-level summary (comment on the overall change instead of 
           specific files within 80 words)
         - Table of files and their summaries. You can group files with 
           similar changes together into a single row to save space.
-        - The output must be in Japanese.
 
       Avoid additional commentary as this summary will be added as a 
       comment on the GitHub pull request.
@@ -149,7 +148,7 @@ inputs:
       'The prompt for generating release notes in the same chat as summarize
       stage'
     default: |
-      Create concise release notes in `markdown` format for this pull request, 
+      Create concise release notes in `markdown` format for this pull request in Japanese, 
       focusing on its purpose and user story. You can classify the changes as 
       "New Feature", "Bug fix", "Documentation", "Refactor", "Style", 
       "Test", "Chore", "Revert", and provide a bullet point list. For example: 
@@ -160,7 +159,6 @@ inputs:
       Below the release notes, generate a short, celebratory poem about the 
       changes in this PR and add this poem as a quote (> symbol). You can 
       use emojis in the poem, where they are relevant.
-      And the output must be in Japanese.
 runs:
   using: 'node16'
   main: 'dist/index.js'
